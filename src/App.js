@@ -1,6 +1,6 @@
 import React, { Component, useState, useEffect  } from 'react'
 import Grid from '@material-ui/core/Grid'
-import ListaInmuebles  from './componentes/vistas/ListaInmuebles'
+import ListaServicios  from './componentes/vistas/ListaServicios'
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles'
 import theme from './theme/theme'
 import AppNavBar from './componentes/layout/AppNavBar'
@@ -69,7 +69,7 @@ function App(props) {
             <AppNavBar />
             <Grid container>
               <Switch>
-                <RutaAutenticada exact path="/" autenticadoFirebase={firebase.auth.currentUser} component={ListaInmuebles} />
+                <RutaAutenticada exact path="/" autenticadoFirebase={firebase.auth.currentUser} component={ListaServicios} />
                 <RutaAutenticada exact path="/perfil" autenticadoFirebase={firebase.auth.currentUser} component={PerfilUsuario} />
                 <RutaAutenticada exact path="/nuevoservicio" autenticadoFirebase={firebase.auth.currentUser} component={NuevoServicio} />
 
