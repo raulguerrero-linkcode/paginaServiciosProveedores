@@ -15,7 +15,7 @@ export const crearKeyword = texto => {
     let letraResumida=""
     texto.split("").forEach(letra => {
         letraResumida += letra
-        arregloKeywords.push(letraResumida).toLowerCase()
+        arregloKeywords.push(letraResumida.toLowerCase())
     })
 
 return arregloKeywords

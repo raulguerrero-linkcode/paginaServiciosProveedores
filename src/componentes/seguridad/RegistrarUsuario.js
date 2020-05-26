@@ -66,6 +66,7 @@ class RegistrarUsuario extends Component {
         this.setState ({
             usuario : usuario
         })
+       
     }
 
 
@@ -75,16 +76,42 @@ class RegistrarUsuario extends Component {
         const [ { sesion }, dispatch ] = this.context
         const { firebase, usuario } = this.state
 
-        let callback = await crearUsuario(dispatch, firebase, usuario)
+        let correosNoValidos = ["gmail","live","msn","outlook","hotmail", "yahoo", "yandex", "mail", "mailo", "aol", "gmx", "me", "care2"
+                                ,"zoho", "disroot", "rediffmail", "tutanota", "protonmail", "mailfence", "lockbin", "criptext", "10minutemail"
+                                ,"hushmail", "lycos","net-c","openmailbox","qq","seznam","arvixe"]
+        
+        if (usuario.email.includes("@")) {
 
-        if (callback.status) {
-            this.props.history.push("/")
-        } else {
-            openMensajePantalla(dispatch, {
-                open : true,
-                mensaje : callback.mensaje.message
-            })
-        }
+            let correo = usuario.email.split("@",2)
+            
+            if (correosNoValidos.indexOf(correo[1].toLowerCase().split(".",1).toString())>0 ) {
+                
+                openMensajePantalla(dispatch, {
+                    open : true,
+                    mensaje : "Favor de indicar un correo corporativo"
+                })
+
+            } else {
+                
+                let callback = await crearUsuario(dispatch, firebase, usuario)
+
+                if (callback.status) {
+                    this.props.history.push("/")
+                    openMensajePantalla(dispatch, {
+                        open : true,
+                        mensaje : "Bienvenido"
+                    })
+                } else {
+                    openMensajePantalla(dispatch, {
+                        open : true,
+                        mensaje : callback.mensaje.message
+                    })
+                }
+                
+            }
+
+        }      
+
         /*
         console.log('Este es el usuario', this.state.usuario)
 

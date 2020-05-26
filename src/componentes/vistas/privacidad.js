@@ -30,7 +30,7 @@ class privacidad extends Component {
         return (
             <Container style={style.formato}>
                 <Paper >
-                    <Grid container wrap="nowrap"  item xs={6} md={12} spacing={2}>
+                    <Grid container wrap="nowrap"  item xs={12} md={12} spacing={2}>
                     <Grid item>
                         <img src={logoLink} height= "100px" />
                     </Grid>
