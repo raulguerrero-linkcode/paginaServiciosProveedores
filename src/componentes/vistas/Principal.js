@@ -7,6 +7,9 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import CarouselView from './CarouselView'
 import LinkButton from '../components'
+import FooterPrincipal from './FooterPrincipal'
+import Logo from '../../logo.png'
+import { Media } from 'reactstrap'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,23 +34,28 @@ export default function SimpleExpansionPanel() {
 
   return (
     <Container className={classes.root}>
-    
+        <div display="flex">
+            <Media src={Logo} width="20%" alt="LinkCode services" />
+        
       <ExpansionPanel>
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>Iniciar sesion o registrarse</Typography>
+        <Typography className={classes.heading}>Iniciar sesion o registrarse</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
         <LinkButton to='/login' >Inicie sesion o regístrese con nosotros!</LinkButton>
         </ExpansionPanelDetails>
       </ExpansionPanel>
-      
+      </div>
     <Grid >
       <CarouselView />
       </Grid>
+    <p>
+        <FooterPrincipal />
+    </p>
     </Container>
   )
 }
