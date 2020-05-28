@@ -57,7 +57,7 @@ class Login extends Component {
         let callback = await iniciarSesion( dispatch, firebase, email, password )
 
         if (callback.status) {
-            this.props.history.push("/")
+            this.props.history.push("/listaservicios")
         } else {
             openMensajePantalla(dispatch, {
                 open : true,
@@ -66,7 +66,6 @@ class Login extends Component {
         }
 
         /*const { firebase, usuario } = this.state
-
         firebase.autenticacion
         .signInWithEmailAndPassword(usuario.email, usuario.password)
         .then(autenticacion => {
@@ -95,7 +94,9 @@ class Login extends Component {
         return (
             <Container maxWidth="xs">
                 <div style={style.paper}>
-                   
+                    <Avatar style={style.avatar}>
+                        <LockOutlinedIcon />
+                    </Avatar>
                     <Typography component="h1" variatn="h5">
                         Ingrese su usuario o correo para iniciar
                     </Typography>
@@ -129,15 +130,20 @@ class Login extends Component {
                         </Button>
                     </form>
 
-                    <Typography style={{marginTop : 20}}>Si aún no tiene una cuenta, puede crear una 
+                    <Typography style={{marginTop : 20}}>Si aún no tiene una cuenta, puede crear una  
                     <Link href="/newuser" >
                             aquí
                         </Link>
                     </Typography>
 
-                    <Typography style={{marginTop : 15}} >Si quiere conocer nuestra política de privacidad de click 
+                    <Typography style={{marginTop : 15}} >Si quiere conocer nuestra política de privacidad de click  
                     <Link href="/privacidad" >
                             aquí
+                        </Link>
+                    </Typography>
+                    <Typography style={{marginTop : 15}} >  
+                    <Link href="/" >
+                            Página principal
                         </Link>
                     </Typography>
                 </div>

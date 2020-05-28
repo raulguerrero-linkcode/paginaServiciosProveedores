@@ -60,6 +60,7 @@ class ListaServicios extends Component {
             name: e.target.value,
             typing: false,
             typingTimeout : setTimeout(goTime => {
+                console.log("Obteniendo datos de servicios")
                 let objectQuery = this.props.firebase.db
                     .collection("Proyectos")
                     .orderBy("descripcion")
@@ -154,7 +155,7 @@ class ListaServicios extends Component {
                                                 : logo 
                                             : logo
                                         }
-                                        title="Mi servicio"
+                                        title="Mi servicios disponibles"
                                         />
 
 

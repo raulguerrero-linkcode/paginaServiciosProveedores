@@ -70,10 +70,12 @@ function App(props) {
             <AppNavBar />
             <Grid container>
               <Switch>
-                <RutaAutenticada exact path="/" exact component={Principal} />
+                
                 <RutaAutenticada exact path="/perfil" autenticadoFirebase={firebase.auth.currentUser} component={PerfilUsuario} />
+                <RutaAutenticada exact path="/listaservicios" autenticadoFirebase={firebase.auth.currentUser} component={ListaServicios} />
                 <RutaAutenticada exact path="/nuevoservicio" autenticadoFirebase={firebase.auth.currentUser} component={NuevoServicio} />
 
+                <RutaAutenticada exact path="/" exact component={Principal} />
                 <Route path="/newUser/" exact component={RegistrarUsuario}></Route> 
                 <Route path="/login/" exact component={Login}></Route> 
                 <Route path="/privacidad/" exact component={privacidad}></Route> 

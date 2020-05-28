@@ -15,7 +15,7 @@ function RutaAutenticada( { component : Component, autenticadoFirebase, ...rest 
             render={(props) => (autenticado===true || autenticadoFirebase !== null)
             
                 ? <Component { ...props} { ...rest} />
-            : <Redirect to="/login" />
+            : <Redirect to="/listaservicios" />
             }
              
         />

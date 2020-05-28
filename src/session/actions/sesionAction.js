@@ -10,9 +10,6 @@ export const iniciarSesion = (dispatch, firebase, email, password ) => {
                 .get()
                 .then(doc => {
                     const usuarioDB = doc.data()
-                    console.log("Mostrando los datos")                
-                    console.log(doc.data())
-
                     dispatch({
                         type : "INICIAR_SESION",
                         sesion : usuarioDB,

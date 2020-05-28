@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Toolbar, Typography, Button, IconButton, Drawer, Avatar } from '@material-ui/core'
-import { Link } from 'react-router-dom'
+import { Toolbar,  Button, IconButton, Drawer, Avatar } from '@material-ui/core'
+// import { Link } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles'
 import { consumerFirebase } from '../../../server/index'
 import { compose, fromRenderProps } from 'recompose'
@@ -68,7 +68,7 @@ class BarSession extends Component {
         salirSesion(dispatch, firebase)
         .then(success => {
 
-            this.props.history.push("/login")
+            this.props.history.push("/")
             }
         )
     }
@@ -142,9 +142,7 @@ class BarSession extends Component {
 
                     <div className={classes.grow}></div>
                     <div className={classes.sectionDesktop}>
-                        <IconButton color="inherit" component={Link} to="/">
-                            <i className="material-icons">mail_outline</i>
-                        </IconButton>
+                       
                         <Button color="inherit" onClick={this.salirSesionApp}>Log Out</Button>
                         <Button color="inherit">{textoUsuario}</Button>
                         <Avatar src={sesion.usuario.foto ||  fotoUsuarioTemp}></Avatar>

@@ -7,23 +7,20 @@ import Front from '../../carouselImg/imgFront.PNG'
 import Excel from '../../carouselImg/imgExcel.PNG'
 import Scrum from '../../carouselImg/imgScrum.PNG'
 
-import LinkButton from '../components'
 
-
-
-const style={
+const style = {
     
-    paper: {
-                marginTop: 9,
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center"
-            },
-    boton: {
-        margingTop: 50
+    gridTextField : {
+        marginTop : "20px",
+        display: "flex",
+        minHeight : 100,
+        variant:"outlined"
+
     }
-    
+
 }
+
+
 
 export default function CarouselView(props)
 
@@ -31,10 +28,7 @@ export default function CarouselView(props)
 {
     var items = [
         {
-            
             img: Spring
-            
-
         },
         {
             
@@ -71,11 +65,10 @@ function Item(props)
 
 {
     return (
-        <Paper style={style.paper}>
-            <h2>{props.item.name}</h2>
-            <p>{props.item.description}</p>
-            <img src={props.item.img}></img>
-            <LinkButton to='/login' style={style.boton}>¿Desea conocer más?</LinkButton>
+        
+        <Paper style={style.gridTextField}>
+            <img src={props.item.img} width="100%"></img>
         </Paper>
+        
     )
 }
