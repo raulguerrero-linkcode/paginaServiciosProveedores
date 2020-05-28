@@ -95,9 +95,7 @@ class Login extends Component {
         return (
             <Container maxWidth="xs">
                 <div style={style.paper}>
-                    <Avatar style={style.avatar}>
-                        <LockOutlinedIcon />
-                    </Avatar>
+                   
                     <Typography component="h1" variatn="h5">
                         Ingrese su usuario o correo para iniciar
                     </Typography>

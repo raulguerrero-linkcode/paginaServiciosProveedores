@@ -20,6 +20,7 @@ import privacidad from './componentes/vistas/privacidad'
 
 import NuevoServicio from './componentes/vistas/NuevoServicio'
 
+import Principal from './componentes/vistas/Principal'
 
 
 function App(props) {
@@ -69,7 +70,7 @@ function App(props) {
             <AppNavBar />
             <Grid container>
               <Switch>
-                <RutaAutenticada exact path="/" autenticadoFirebase={firebase.auth.currentUser} component={ListaServicios} />
+                <RutaAutenticada exact path="/" exact component={Principal} />
                 <RutaAutenticada exact path="/perfil" autenticadoFirebase={firebase.auth.currentUser} component={PerfilUsuario} />
                 <RutaAutenticada exact path="/nuevoservicio" autenticadoFirebase={firebase.auth.currentUser} component={NuevoServicio} />
 
